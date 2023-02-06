@@ -46,7 +46,7 @@ export const Home = () => {
   return (
     <div >
       <div className="d-flex justify content center mx-5">
-        <h1 className="text-dark"> Characters </h1>
+        <h1 className="text-dark"> Personajes </h1>
       </div>
       <div className="d-flex justify content center mx-5 my-2 overflow-auto">
         
@@ -60,7 +60,7 @@ export const Home = () => {
       <div className="d-flex justify content center mx-5 my-2 overflow-auto">
         
         {store.planets.map((item, index) => (
-          <Planets nombrep={item.name} population={item.population} terrain={item.terrain} id={index+1} key={index}/>
+          <Planets nombre={item.name} population={item.population} terrain={item.terrain} id={index+1} key={index}/>
         ))}
       </div>
       <div className="d-flex justify content center mx-5 my-3">

@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useContext} from "react"; //
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext.js";
 
- export const Planets = (props) => {
+
+
+export const Planets = (props) => {
+  const {actions}=useContext(Context)
+
 	return (
 
 <div className="card-group row">
@@ -15,9 +20,7 @@ import { Link } from "react-router-dom";
 
     <div className="mx-3 pb-2">
           <Link to={"/viewplanets/"+ props.id} className="btn btn-primary btn-sm ms-2" type="button" > Learn more! </Link>
-          <button type="button" className="btn btn-outline-warning ms-5 my-3" style={{ height: 40, width: 40 }}> 
-          <i className="fa fa-heart"></i>
-          </button>
+          <button onClick={()=>actions.agregarFavorito(props)} type="button" className="btn btn-outline-warning mx-3 " style={{ height: 40, width: 40 }}> <i className="fa fa-heart"></i></button>
           </div>
         </div>
 </div>
